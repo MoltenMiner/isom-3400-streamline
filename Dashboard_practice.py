@@ -5,7 +5,7 @@ st.header("Manager Input Section")
 st.write("Please enter the monthly sales target and select the region.")
 
 
-monthly_salary = st.number_input("Enter Monthly Sales Target (in USD):", min_value=0, max_value=9999999999, value=0)
+monthly_salary = st.number_input("Enter Monthly Sales Target (in USD):", min_value=0, max_value=9999999999, value=50000)
 region= st.selectbox("Select region:", ["East", "South", "West", "North"])
 
 if st.button("Submit"):
