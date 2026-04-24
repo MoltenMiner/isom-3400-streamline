@@ -9,5 +9,5 @@ monthly_salary = st.number_input("Enter Monthly Sales Target (in USD):", min_val
 region= st.selectbox("Choose your region:", ["East", "South", "West", "North"])
 
 if st.button("Submit"):
-  st.success("Button clicked!")
+  st.success("*Dashboard updated successfully!*")
   st.write(f"Your salary is {monthly_salary}. You live in the {region} area.")
