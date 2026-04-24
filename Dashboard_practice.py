@@ -11,3 +11,5 @@ region= st.selectbox("Choose your region:", ["East", "South", "West", "North"])
 if st.button("Submit"):
   st.success("*Dashboard updated successfully!*")
   st.write(f"Your salary is {monthly_salary}. You live in the {region} area.")
+  if monthly_salary > 100000:
+    st.write("Great! You have set an ambitious target!")
