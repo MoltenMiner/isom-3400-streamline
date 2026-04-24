@@ -22,4 +22,4 @@ if st.button("Calculate Scientific"):
         result = math.log(value)
 
 
-    st.success(f"Result: {result}")
+    st.success(f"Result: {result,:3f}")
