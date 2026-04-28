@@ -9,7 +9,7 @@ name = st.text_input("What is your name?")
 # -------------------------------
 # Title and Description
 # -------------------------------
-st.title(f"{name} Sales Dashboard")
+st.title(f"{name}'s Sales Dashboard")
 st.write("Analyse monthly sales data interactively!")
 
 # -------------------------------
