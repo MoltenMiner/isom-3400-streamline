@@ -12,17 +12,18 @@ with st.form(key="my_form"):
   Fav_no = int(st.number_input("What is your favourite number?"))
   button = st.form_submit_button("Register")
 
-  contacts_dict = [{"First name": First_name, 
+ 
+  
+  if button:
+     contacts_dict = [{"First name": First_name, 
                     "Last name": Last_name, 
                     "Favourite number": Fav_no}]
       
-  with open ("contacts.csv", "w", newline = '') as file:
-      writer = csv.DictWriter(file, fieldnames= header)
-      writer.writeheader()
-      writer.writerows(contacts_dict)
-  
-  if button:
-    if First_name.strip != () and Last_name.strip != ():
+    with open ("contacts.csv", "a", newline = '') as file:
+        writer = csv.DictWriter(file, fieldnames= header)
+        writer.writeheader()
+        writer.writerows(contacts_dict)
+    if First_name.strip() != "" and Last_name.strip() != "":
       st.success("Successfully added to the file!")
 
       with open ("contacts.csv", "r") as file:
@@ -30,5 +31,5 @@ with st.form(key="my_form"):
     
         st.dataframe(writer)
     
-    elif not First_name or not Last_name or First_name.strip == () or Last_name.strip == ():
+    elif not First_name or not Last_name or First_name.strip() == () or Last_name.strip() == ():
       st.write("You still have not entered all the required items!")
