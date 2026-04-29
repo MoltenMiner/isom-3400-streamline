@@ -1,4 +1,4 @@
-
+# Write your code below
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -14,13 +14,16 @@ with st.form(key="my_form"):
   if button:
     if First_name.strip != "" and Last_name.strip != "":
       
-      contacts = pd.DataFrame({"First name": First_name, 
-                               "Last name": Last_name, 
-                               "Favourite number": Fav_no})
       
       with open ("contacts.csv", "w", newline = '') as file:
         writer = csv.DictWriter(file, fieldnames= header)
         writer.writeheader()
         writer.writerows(contacts)
+
+    st.success("Successfully added to the file")
+
+    contacts = pd.DataFrame({"First name": First_name, 
+                               "Last name": Last_name, 
+                               "Favourite number": Fav_no})
       
     
