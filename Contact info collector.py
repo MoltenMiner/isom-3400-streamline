@@ -13,6 +13,6 @@ with st.form(key="my_form"):
     if First_name.strip != "" and Last_name.strip != "":
       
       
-      pd.DataFrame({"First name": First_name, "Last name": Last_name})
+      contacts = pd.DataFrame({"First name": First_name, "Last name": Last_name})
       
     
