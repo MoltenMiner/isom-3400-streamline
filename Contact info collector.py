@@ -1,8 +1,10 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import csv
 
+header = ["First name", "Last name", "Favourite number"]
 with st.form(key="my_form"):
 
   First_name = st.text_input("What is your first name?")
@@ -17,6 +19,8 @@ with st.form(key="my_form"):
                                "Favourite number": Fav_no})
       
       with open ("contacts.csv", "w", newline = '') as file:
+        writer = csv.DictWriter(file, fieldnames= header)
+        writer.writeheader()
         writer.writerows(contacts)
       
     
