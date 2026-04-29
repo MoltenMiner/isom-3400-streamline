@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import csv
 
-contacts.csv = []
 header = ["First name", "Last name", "Favourite number"]
 with open ("contacts.csv", "w", newline='') as file:
   writer = csv.DictWriter(file, fieldnames= header)
