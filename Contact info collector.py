@@ -30,4 +30,4 @@ with st.form(key="my_form"):
       st.dataframe(writer)
     
 else:
-  st.write("You still have not entered all the required items!)
+  st.write("You still have not entered all the required items!")
