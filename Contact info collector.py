@@ -25,6 +25,7 @@ with st.form(key="my_form"):
     st.success("Successfully added to the file!")
 
     with open ("contacts.csv", "r") as file:
+      writer = csv.DictReader(file)
     
-      st.dataframe(contacts.csv)
+      st.dataframe(writer)
     
