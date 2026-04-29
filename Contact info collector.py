@@ -15,7 +15,7 @@ with st.form(key="my_form"):
  
   
   if button:
-     contacts_dict = [{"First name": First_name, 
+    contacts_dict = [{"First name": First_name, 
                     "Last name": Last_name, 
                     "Favourite number": Fav_no}]
       
@@ -29,7 +29,7 @@ with st.form(key="my_form"):
       st.success("Successfully added to the file!")
 
       with open ("contacts.csv", "r") as file:
-          writer = csv.DictReader(file)
+        writer = csv.DictReader(file)
     
         st.dataframe(writer)
     
