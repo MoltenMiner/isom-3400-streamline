@@ -22,10 +22,9 @@ with st.form(key="my_form"):
         writer.writeheader()
         writer.writerows(contacts_dict)
 
-    st.success("Successfully added to the file")
+    st.success("Successfully added to the file!")
 
-    contacts = pd.DataFrame({"First name": First_name, 
-                               "Last name": Last_name, 
-                               "Favourite number": Fav_no})
-      
+    with open ("contacts.csv", "r") as file:
+    
+      st.dataframe(contacts)
     
