@@ -30,5 +30,5 @@ with st.form(key="my_form"):
     
         st.dataframe(writer)
     
-    else:
+    elif First_name.strip == "" or Last_name.strip == ""::
       st.write("You still have not entered all the required items!")
