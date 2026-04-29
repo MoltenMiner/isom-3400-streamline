@@ -5,6 +5,10 @@ import numpy as np
 import csv
 
 header = ["First name", "Last name", "Favourite number"]
+with open ("contacts.csv", "w", newline='') as file:
+  writer = csv.DictWriter(file, fieldnames= header)
+  writer.writeheader()
+  
 with st.form(key="my_form"):
 
   First_name = st.text_input("What is your first name?")
@@ -12,10 +16,6 @@ with st.form(key="my_form"):
   Fav_no = int(st.number_input("What is your favourite number?"))
   button = st.form_submit_button("Register")
 
-with open ("contacts.csv", "w", newline='') as file:
-  writer = csv.DictWriter(file, fieldnames= header)
-  writer.writeheader()
-  
   if button:
     if First_name.strip() != "" and Last_name.strip() != "":
       contacts_dict = [{"First name": First_name, 
