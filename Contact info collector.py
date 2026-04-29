@@ -26,5 +26,5 @@ with st.form(key="my_form"):
 
     with open ("contacts.csv", "r") as file:
     
-      st.dataframe(contacts)
+      st.dataframe(contacts.csv)
     
