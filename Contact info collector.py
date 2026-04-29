@@ -32,7 +32,7 @@ with st.form(key="my_form"):
       
       st.success("Successfully added to the file!")
     elif not First_name or not Last_name or First_name.strip() == "" or Last_name.strip() == "":
-    st.write("You still have not entered all the required items!")
+      st.write("You still have not entered all the required items!")
 
 
 with open ("contacts.csv", "r") as file:
