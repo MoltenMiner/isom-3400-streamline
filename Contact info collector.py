@@ -22,7 +22,7 @@ with st.form(key="my_form"):
       writer.writerows(contacts_dict)
   
   if button:
-    if First_name.strip != "" and Last_name.strip != "":
+    if First_name.strip != () and Last_name.strip != ():
       st.success("Successfully added to the file!")
 
       with open ("contacts.csv", "r") as file:
@@ -30,5 +30,5 @@ with st.form(key="my_form"):
     
         st.dataframe(writer)
     
-    elif First_name.strip == "" or Last_name.strip == "":
+    elif not First_name or not Last_name or First_name.strip == () or Last_name.strip == ():
       st.write("You still have not entered all the required items!")
