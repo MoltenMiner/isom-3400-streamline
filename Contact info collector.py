@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import nump as np
+import numpy as np
 import csv
 
 with st.form(key="my_form"):
