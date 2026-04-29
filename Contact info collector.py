@@ -20,14 +20,14 @@ with st.form(key="my_form"):
                     "Favourite number": Fav_no}]
       
     with open ("contacts.csv", "a", newline = '') as file:
-        writer = csv.DictWriter(file, fieldnames= header)
-        writer.writeheader()
-        writer.writerows(contacts_dict)
+      writer = csv.DictWriter(file, fieldnames= header)
+      writer.writeheader()
+      writer.writerows(contacts_dict)
     if First_name.strip() != "" and Last_name.strip() != "":
       st.success("Successfully added to the file!")
 
       with open ("contacts.csv", "r") as file:
-        writer = csv.DictReader(file)
+          writer = csv.DictReader(file)
     
         st.dataframe(writer)
     
