@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import csv
+import os
 
 header = ["First name", "Last name", "Favourite number"]
 
