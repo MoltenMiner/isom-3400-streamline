@@ -79,3 +79,7 @@ for i in range(5):
     placeholder.write(f"Loading data... {i*20}% complete")
     time.sleep(1)
 placeholder.write("Data loading complete!")
+
+st.bar_chart({"Revenue (in M$)": [1.2, 1.5, 1.3, 1.6]})
+if st.button("Show Motivation"):
+    st.success("Keep pushing for growth! 🚀")
