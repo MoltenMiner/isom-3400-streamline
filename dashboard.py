@@ -64,3 +64,11 @@ col1, col2, col3 = st.columns(3)
 col1.metric("Total Sales", f"${filtered_data['Sales'].sum():,.0f}")                    #shown in metric format
 col2.metric("Total Expenses", f"${filtered_data['Expenses'].sum():,.0f}")
 col3.metric("Profit", f"${(filtered_data['Sales'].sum() - filtered_data['Expenses'].sum()):,.0f}")
+
+
+tab1, tab2, tab3 = st.tabs(["Sales Data", "Customer Insights", "Market Trends"])
+
+with st.expander("More Information"):
+    st.write("Data collected via surveys and reports.")
+
+growth = st.slider("Adjust growth percentage:", 0, 50, 10)
