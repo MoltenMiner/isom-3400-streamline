@@ -53,7 +53,7 @@ if show_expenses:
 ax.set_title("Monthly Performance")
 ax.set_xlabel("Month")
 ax.set_ylabel("Amount ($)")
-
+ax.legend()
 st.pyplot(fig)
 
 # -------------------------------
