@@ -72,3 +72,9 @@ with st.expander("More Information"):
     st.write("Data collected via surveys and reports.")
 
 growth = st.slider("Adjust growth percentage:", 0, 50, 10)
+
+placeholder = st.empty()
+for i in range(5):
+    placeholder.write(f"Loading data... {i*20}% complete")
+    time.sleep(1)
+placeholder.write("Data loading complete!")
