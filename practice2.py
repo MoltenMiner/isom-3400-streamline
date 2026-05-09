@@ -72,26 +72,26 @@ with st.sidebar:
                             options= ["Home", "About", "Contact", "Data Insights"],
                             default_index = 0)
 
-    if selected == "Home":
-        st.title(f"Welcome to {selected}!")
-        st.write ("Do you know human got 2 eyes?")
-    elif selected == "About":
-        st.title(f"Welcome to {selected}!")
-        st.write("About this app: IDK")
-        st.write("App developer: me")
-    elif selected == "Contact":
-        st.title(f"Welcome to {selected}!")
-        with st.form(key= "Email"):
-            st.text_input("Enter your email:")
-            button = st.form_submit_button("Register")
-            if button:
-                st.success("Success!")
-            
-    elif selected == "Data Insights":
-        st.title(f"Welcome to {selected}!")
-        data = st.file_uploader("Upload your csv here", type="csv")
-        df = pd.DataFrame(data)
-        st.dataframe(df[0:10])
+if selected == "Home":
+    st.title(f"Welcome to {selected}!")
+    st.write ("Do you know human got 2 eyes?")
+elif selected == "About":
+    st.title(f"Welcome to {selected}!")
+    st.write("About this app: IDK")
+    st.write("App developer: me")
+elif selected == "Contact":
+    st.title(f"Welcome to {selected}!")
+    with st.form(key= "Email"):
+        st.text_input("Enter your email:")
+        button = st.form_submit_button("Register")
+        if button:
+            st.success("Success!")
+        
+elif selected == "Data Insights":
+    st.title(f"Welcome to {selected}!")
+    data = st.file_uploader("Upload your csv here", type="csv")
+    df = pd.DataFrame(data)
+    st.dataframe(df[0:10])
 
 
 
