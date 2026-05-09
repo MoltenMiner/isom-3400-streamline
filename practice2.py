@@ -123,7 +123,7 @@ elif selected == "Business Performance Dashboard":
         status = [{"Eco-friendly": "increasing", 
                    "DEI": "decreasing", 
                    "Choco": "no change"}]
-        for a,b in status.items:
+        for a,b in status.items():
             st.write(a, b)
     with st.expander('More information'):
         st.write("Data collected from nowhere")
