@@ -124,7 +124,7 @@ elif selected == "Business Performance Dashboard":
                    "DEI": "decreasing", 
                    "Choco": "no change"}]
         for a,b in status.items():
-            st.write(a, b)
+            st.write(f"{a}: {b}")
     with st.expander('More information'):
         st.write("Data collected from nowhere")
     box = st.empty()
