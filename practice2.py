@@ -30,7 +30,7 @@ elif option == "Divide":
 
 else:
     option2 = st.selectbox("What is the advanced operation?", 
-                           ["Square Root", "Power", "Sin", "Cos", "Tan" "Log"])
+                           ["Square Root", "Power", "Sin", "Cos", "Tan", "Log"])
     if option2 == "Square Root":
         try:
             st.success(f"Result: {math.sqrt(a)}")
