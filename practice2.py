@@ -102,13 +102,13 @@ elif selected == "Business Performance Dashboard":
 
     with col1:
         st.header("Q1")
-        st.metrics("$1.2M")
+        st.write("$1.2M")
     with col2:
         st.header("Q2")
-        st.metrics("$1.5M")
+        st.write("$1.5M")
     with col3:
         st.header("Q3")
-        st.metrics("$1.3M")
+        st.write("$1.3M")
 
     tab1, tab2, tab3 = st.tabs(["Sales Data", "Customer Insights" , "Market Trends"])
     with tab1:
