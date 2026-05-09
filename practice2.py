@@ -120,11 +120,11 @@ elif selected == "Business Performance Dashboard":
             st.write(i)
 
     with tab3:
-        status = [{"Eco-friendly": "increasing", 
-                   "DEI": "decreasing", 
-                   "Choco": "no change"}]
-        for a,b in status.items():
-            st.write(f"{a}: {b}")
+        status = {"Eco-friendly": "increasing", 
+              "DEI": "decreasing", 
+              "Choco": "no change"}
+    for key, value in status.items():
+        st.write(f"{key}: {value}")
     with st.expander('More information'):
         st.write("Data collected from nowhere")
     box = st.empty()
