@@ -33,7 +33,7 @@ else:
                            ["Square Root", "Power", "Sin", "Cos", "Tan" "Log"])
     if option2 == "Square Root":
         try:
-            st.success(f"Result: {sqrt(a)}")
+            st.success(f"Result: {math.sqrt(a)}")
         except ZeroDivisionError:
             st.write("You cannot take a square root of 0")
 
@@ -42,25 +42,25 @@ else:
         
     elif option2 == "Sin":
         try:
-            st.success(f"Result: {sin(a)}")
+            st.success(f"Result: {math.sin(a)}")
         except ZeroDivisionError:
             st.write("Invalid input")
     
     elif option2 == "Cos":
         try:
-            st.success(f"Result: {cos(a)}")
+            st.success(f"Result: {math.cos(a)}")
         except ZeroDivisionError:
             st.write("Invalid input")
     
     elif option2 == "Tan":
         try:
-            st.success(f"Result: {tan(a)}")
+            st.success(f"Result: {math.tan(a)}")
         except ZeroDivisionError:
             st.write("Invalid input")
 
     else:
         try:
-            st.success(f"Result: {log(a)}")
+            st.success(f"Result: {math.log(a)}")
         except ZeroDivisionError:
             st.write("Invalid input")
 
