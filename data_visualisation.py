@@ -1,14 +1,4 @@
 
-
-Choose IPYNB Output Option:
-
-Show
-
-Hide
-Code
-# Step 1: Install Streamlit (run in terminal: pip install streamlit)
-
-# Step 2: Import Necessary Libraries
 import streamlit as st
 import numpy as np
 import pandas as pd
