@@ -71,7 +71,7 @@ else:
 #streamlit_option_menu#
 with st.sidebar:
     selected = option_menu(menu_title="Menu", 
-                            options= ["Home", "About", "Contact", "Data Insights", "Business Perfromance Dashboard"],
+                            options= ["Home", "About", "Contact", "Data Insights", "Business Performance Dashboard"],
                             default_index = 0)
 
 if selected == "Home":
