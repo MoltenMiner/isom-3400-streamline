@@ -112,8 +112,7 @@ elif selected == "Business Performance Dashboard":
 
     tab1, tab2, tab3 = st.tabs(["Sales Data", "Customer Insights" , "Market Trends"])
     with tab1:
-        data = pd.DataFrame({"Quarter": 1, "Revenue": 1.2}, {"Quarter": 2, "Revenue": 1.5},
-                    {"Quarter": 3, "Revenue": 1.3}, {"Quarter": 4, "Revenue": 2})
+        data = pd.DataFrame({"Quarter": [1,2,3,4], "Revenue": [1.2,1.5,1.3,2]})
         st.dataframe(data)
     with tab2:
         comments = ["I love choco!", "I hate choco!", "IDK"]
