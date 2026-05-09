@@ -91,8 +91,9 @@ elif selected == "Contact":
 elif selected == "Data Insights":
     st.title(f"Welcome to {selected}!")
     data = st.file_uploader("Upload your csv here", type="csv")
-    df = pd.DataFrame(data)
-    st.dataframe(df[0:10])
+    df = pd.read_csv(data)
+    
+    st.dataframe(df.head(10))
 
 
 
