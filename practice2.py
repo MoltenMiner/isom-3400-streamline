@@ -21,7 +21,7 @@ if option == "Add":
 elif option == "Subtract":
     st.success(f"Result: {a-b}")
 elif option == "Multiply":
-    st.success(f"Result: {a-b}")
+    st.success(f"Result: {a*b}")
 elif option == "Divide":
     try:
         st.success(f"Result: {a/b}")
