@@ -44,23 +44,16 @@ with col1:
 
 with col2:
     st.metric("Number of columns", data.shape[1])
-
+data = []
 with open ("sales_data.csv", "r") as file:
     reader = csv.DictReader(file)
-    a=0
-    b=0
-    c=0
     for i in reader:
-        if i["Product"] == "A":
-            a = a+ int(i["Sales"])
-        elif i["Product"] == "B":
-            b = b+ int(i["Sales"])
-        else:
-            c = c+ int(i["Sales"])
-    
-    sales = {"A": a, "B":b, "C": c}
+        data.append({"Date": i["Date"], "Sales": i["Sales"]})
 
-st.line_chart([data["Date"], sales], x= data["Date"])
+st.line_chart(data["Date", "Sales"].set_index("Date"))
+
+
+    
     
 
 
