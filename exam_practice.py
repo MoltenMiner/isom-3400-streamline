@@ -53,7 +53,7 @@ elif option == "Exercise 2":
         sales = np.random.randint(50000,200000, 4)
         
         df = pd.DataFrame({"Quarter": quarter, "Sales": sales})
-        with open ("quarterly_sales.csv', "w") as file:
+        with open ("quarterly_sales.csv", "w") as file:
             writer = csv.DictWriter(file, fieldnames = ["Quarter", "Sales"])
             writer.writeheader()
             writer.writerows(df)
