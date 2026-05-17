@@ -33,10 +33,10 @@ if option == "Exercise 1":
 
 elif option == "Exercise 2":
     st.title("Exercise 2")
-    
+    data = []
     sales = np.random.randint(50000,200000, 4)
     quarter = ["Q1", "Q2", "Q3", "Q4"]
-    data = {"Quarter": quarter, "Sales": sales}
+    data.append({"Quarter": quarter, "Sales": sales})
     df = pd.DataFrame(data)
     st.bar_chart(df[["Quarter", "Sales"]].set_index("Quarter"))
 
@@ -51,8 +51,9 @@ elif option == "Exercise 2":
     
     button = st.button ("Regenerate")
     if button:
+        data =[]
         sales = np.random.randint(50000,200000, 4)
-        data = {"Quarter": quarter, "Sales": sales}
+        data.append({"Quarter": quarter, "Sales": sales})
         df = pd.DataFrame({"Quarter": quarter, "Sales": sales})
         with open ("quarterly_sales.csv", "w") as file:
             writer = csv.DictWriter(file, fieldnames = ["Quarter", "Sales"])
