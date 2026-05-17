@@ -33,21 +33,9 @@ if option == "Exercise 1":
 
 elif option == "Exercise 2":
     st.title("Exercise 2")
-    data = []
-    sales = np.random.randint(50000,200000, 4)
+    
+    
     quarter = ["Q1", "Q2", "Q3", "Q4"]
-    data.append({"Quarter": quarter, "Sales": sales})
-    df = pd.DataFrame(data)
-    barchart = st.bar_chart(df[["Quarter", "Sales"]].set_index("Quarter"))
-
-    with open ("quarterly_sales.csv", "w") as file:
-        writer = csv.DictWriter(file, fieldnames = ["Quarter", "Sales"])
-        writer.writeheader()
-        writer.writerows(data)
-    
-    with open ("quarterly_sales.csv", "r") as file:
-        reader = csv.DictReader(file)
-    
     
     button = st.button ("Regenerate")
     if button:
@@ -57,7 +45,15 @@ elif option == "Exercise 2":
         df = pd.DataFrame({"Quarter": quarter, "Sales": sales})
     
         barchart = st.bar_chart(df[["Quarter", "Sales"]].set_index("Quarter"))
-        
+
+        with open ("quarterly_sales.csv", "w") as file:
+            writer = csv.DictWriter(file, fieldnames = ["Quarter", "Sales"])
+            writer.writeheader()
+            writer.writerows(data)
+    
+        with open ("quarterly_sales.csv", "r") as file:
+            reader = csv.DictReader(file)
+
         
         
 
