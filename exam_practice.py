@@ -37,7 +37,7 @@ sales_data = '''Date,Product,Region,Sales,Units
 with open ("sales_data.csv", "w") as file:
     writer = csv.DictWriter(file, fieldnames = ["Date", "Product", "Region", "Sales", "Unit"])
     writer.writeheader()
-    writer.writerows(sales_data)
+    file.write(sales_data)
 
 data = pd.read_csv("sales_data.csv")
 col1, col2 = st.columns(2)
