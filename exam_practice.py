@@ -52,11 +52,11 @@ b=0
 c=0
 for i in data:
     if i["Product"] == "A":
-        a += i["Sales"]
+        a = a+ int(i["Sales"])
     elif i["Product"] == "B":
-        b += i["Sales"]
+        b = b+ int(i["Sales"])
     else:
-        c += i["Sales"]
+        c = c+ int(i["Sales"])
 
 sales = {"A": a, "B":b, "C": c}
 
