@@ -39,12 +39,12 @@ elif option == "Exercise 2":
     df = pd.DataFrame({"Quarter": quarter, "Sales": sales})
     st.bar_chart(df[["Quarter", "Sales"]].set_index("Quarter"))
 
-    with open ("quarterly_sales.csv', "w") as file:
+    with open ("quarterly_sales.csv", "w") as file:
         writer = csv.DictWriter(file, fieldnames = ["Quarter", "Sales"])
         writer.writeheader()
         writer.writerows(df)
     
-    with open ("quarterly_sales.csv', "r") as file:
+    with open ("quarterly_sales.csv", "r") as file:
         reader = csv.DictReader(file)
     
     
@@ -59,7 +59,7 @@ elif option == "Exercise 2":
             writer.writerows(df)
     
     
-        with open ("quarterly_sales.csv', "r") as file:
+        with open ("quarterly_sales.csv", "r") as file:
             reader = csv.DictReader(file)
     
         st.bar_chart(df[["Quarter", "Sales"]].set_index("Quarter"))
