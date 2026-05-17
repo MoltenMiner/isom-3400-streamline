@@ -36,8 +36,11 @@ sales_data = '''Date,Product,Region,Sales,Units
 
 with open ("sales_data.csv", "w") as file:
     file.write(sales_data)
-
+df = []
 data = pd.read_csv("sales_data.csv")
+for i in data:
+    df.append({"Date": i["Date"], "Product": i["Product"], "Region": i["Region"], "Sales": int(i["Sales"]), "Units": int(i["Units"])})
+
 col1, col2 = st.columns(2)
 with col1:
     st.metric("Number of rows", data.shape[0])
@@ -45,11 +48,11 @@ with col1:
 with col2:
     st.metric("Number of columns", data.shape[1])
 
-st.line_chart(data[["Date", "Sales"]].set_index("Date"))
+st.line_chart(df[["Date","Sales"]], x = "Sales")
 
-st.bar_chart(data[["Sales", "Product"]].set_index("Product"))
+st.bar_chart(df[["Sales", "Product"]], x = "Product")
 
-st.scatter_chart(data[["Units", "Sales"]].set_index("Units"))
+st.scatter_chart(df[["Units", "Sales"]], x = "Units")
 
 
 
