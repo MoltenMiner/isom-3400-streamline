@@ -35,9 +35,7 @@ sales_data = '''Date,Product,Region,Sales,Units
 '''
 
 with open ("sales_data.csv", "w") as file:
-    writer = csv.DictWriter(file, fieldnames = ["Date", "Product", "Region", "Sales", "Unit"])
-    writer.writeheader()
-    writer.writerows(sales_data)
+    file.write(sales_data)
 
 data = pd.read_csv("sales_data.csv")
 col1, col2 = st.columns(2)
@@ -47,18 +45,20 @@ with col1:
 with col2:
     st.metric("Number of columns", data.shape[1])
 
-a=0
-b=0
-c=0
-for i in data:
-    if i["Product"] == "A":
-        a = a+ int(i["Sales"])
-    elif i["Product"] == "B":
-        b = b+ int(i["Sales"])
-    else:
-        c = c+ int(i["Sales"])
-
-sales = {"A": a, "B":b, "C": c}
+with open ("sales_data.csv", "r") as file:
+    reader = csv.DictReader(file)
+    a=0
+    b=0
+    c=0
+    for i in reader:
+        if i["Product"] == "A":
+            a = a+ int(i["Sales"])
+        elif i["Product"] == "B":
+            b = b+ int(i["Sales"])
+        else:
+            c = c+ int(i["Sales"])
+    
+    sales = {"A": a, "B":b, "C": c}
 
 st.line_chart([data["Date"], sales], x= data["Date"])
     
