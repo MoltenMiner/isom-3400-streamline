@@ -47,10 +47,9 @@ with col2:
 
 st.line_chart(data[["Date", "Sales"]].set_index("Date"))
 
-product = st.selectbox("Choose a single product", ["A", "B", "C"])
-
-
 st.bar_chart(data[["Sales", "Product"]].set_index("Product"))
+
+st.scatter_chart(data[["Units", "Sales"]].set_index("Units"))
 
 
 
