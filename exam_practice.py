@@ -44,13 +44,14 @@ with col1:
 
 with col2:
     st.metric("Number of columns", data.shape[1])
-df = []
-with open ("sales_data.csv", "r") as file:
-    reader = csv.DictReader(file)
-    for i in reader:
-        df.append({"Date": i["Date"], "Sales": int(i["Sales"])})
 
 st.line_chart(data[["Date", "Sales"]].set_index("Date"))
+
+product = st.selectbox("Choose a single product", ["A", "B", "C"])
+
+
+st.bar_chart(data[["Sales", "Product"]].set_index("Product"))
+
 
 
     
