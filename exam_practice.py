@@ -56,8 +56,8 @@ elif option == "Exercise 2":
         with open ("quarterly_sales.csv", "w") as file:
             writer = csv.DictWriter(file, fieldnames = ["Quarter", "Sales"])
             writer.writeheader()
-            writer.writerows(df)
-    
+            for i in df:
+                writer.writerow(i)
     
         with open ("quarterly_sales.csv", "r") as file:
             reader = csv.DictReader(file)
