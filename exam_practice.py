@@ -50,7 +50,7 @@ with open ("sales_data.csv", "r") as file:
     for i in reader:
         data.append({"Date": i["Date"], "Sales": int(i["Sales"])})
 
-st.line_chart(data["Date", "Sales"].set_index("Date"))
+st.line_chart(data[["Date", "Sales"]].set_index("Date"))
 
 
     
