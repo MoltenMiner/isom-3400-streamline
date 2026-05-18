@@ -85,8 +85,10 @@ elif option == "Exercise 3":
                   "Price": Price,
                   "Revenue": Revenue})
     st.dataframe(df)
+
+    st.line_chart(df.set_index("Year"))
     
-    
+elif option == "Exercise 4":
     
         
             
