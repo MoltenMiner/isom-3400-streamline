@@ -144,8 +144,14 @@ elif option == "Bonus":
         df = pd.read_csv(file)
         st.dataframe(df)
 
+     
         columns = [i for i in df]
-        st.multiselect("Select data", columns)
+        select = st.multiselect("Select data", columns, max_selection =2)
+        filtered = df[df[select]]
+        st.line_chart(filtered)
+        st.bar_chart(filtered)
+        st.scatter_chart(filtered)
+            
 
     
 
