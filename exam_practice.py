@@ -57,34 +57,34 @@ elif option == "Exercise 2":
 elif option == "Exercise 3":
 
     products = '''Product,Category,Units_Sold,Price,Revenue
-Pro A,Electronics,245,150,36750
-Pro B,Clothing,890,45,40050
-Pro C,Electronics,320,200,64000
-Pro D,Home,156,80,12480
-Pro E,Clothing,540,60,32400
-Pro F,Electronics,410,120,49200
-Pro G,Home,278,55,15290
-Pro H,Clothing,670,50,33500
-Pro I,Electronics,195,300,58500
-Pro J,Home,430,40,17200'''
-
-with open ("products.csv", "w") as file:
-    writer = csv.DictWriter(file, fieldnames= ["Product", "Category", "Units_sold", "Price", "Revenue"])
-    writer.writeheader()
-    writer.writerows(products)
+    Pro A,Electronics,245,150,36750
+    Pro B,Clothing,890,45,40050
+    Pro C,Electronics,320,200,64000
+    Pro D,Home,156,80,12480
+    Pro E,Clothing,540,60,32400
+    Pro F,Electronics,410,120,49200
+    Pro G,Home,278,55,15290
+    Pro H,Clothing,670,50,33500
+    Pro I,Electronics,195,300,58500
+    Pro J,Home,430,40,17200'''
     
-pd.DataFrame("products.csv")
-    
-    
+    with open ("products.csv", "w") as file:
+        writer = csv.DictWriter(file, fieldnames= ["Product", "Category", "Units_sold", "Price", "Revenue"])
+        writer.writeheader()
+        writer.writerows(products)
         
-
-
-
-
-
-
+    pd.DataFrame("products.csv")
         
-               
+        
+            
+    
+    
+    
+    
+    
+    
+            
+                   
 
 
 
