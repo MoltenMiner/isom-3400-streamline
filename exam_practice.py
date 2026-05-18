@@ -146,7 +146,7 @@ elif option == "Bonus":
 
      
         columns = [i for i in df]
-        select = st.multiselect("Select data", columns, max_selection =2)
+        select = st.multiselect("Select data", columns)
         filtered = df[df[select]]
         st.line_chart(filtered)
         st.bar_chart(filtered)
