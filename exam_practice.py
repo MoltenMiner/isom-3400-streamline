@@ -105,7 +105,6 @@ elif option == "Exercise 4":
         if button:
             df = pd.DataFrame({"Name":name, "Age": age, "Annual Spend": annual_spend})
             st.dataframe(df)
-            st.scatter_chart(df[["Age", "Annual Spend"]].set_index("Age"))
             st.success("Data saved!")
 
     
