@@ -116,12 +116,12 @@ elif option == "Exercise 5":
         sales = np.random.randint(1000, 10000, 12)
         df = [{"Month": month[i], "Sales": sales[i]} for i in range(12)]
 
-        with open ("monthly_sales,csv", "w") as file:
+        with open ("monthly_sales.csv", "w") as file:
             writer = csv.DictWriter(file, fieldnames= ["Month", "Sales"])
             writer.writeheader()
             writer.writerows(df)
 
-    data = pd.read_csv("monthly_sales,csv")
+    data = pd.read_csv("monthly_sales.csv")
     st.dataframe(data)
     threshold = st.slider("Adjust sales threshold", min_value = 1000, max_value = 10000, value = 5000)
 
