@@ -55,7 +55,8 @@ elif option == "Exercise 2":
             reader = csv.DictReader(file)
 
 elif option == "Exercise 3":
-
+    st.title("From CSV")
+    
     products = '''Product,Category,Units_Sold,Price,Revenue
     Pro A,Electronics,245,150,36750
     Pro B,Clothing,890,45,40050
@@ -73,7 +74,18 @@ elif option == "Exercise 3":
         
     data = pd.read_csv("products.csv")
     st.dataframe(data)
-        
+
+    st.title("Generated form random")
+    
+    Price = np.random.randint(100,1000, 10)
+    Revenue = np.random.randint(10,90, 10)
+    df = pd.DataFrame({"Year": [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                  "Price": Price,
+                  "Revenue": Revenue})
+    st.dataframe(df)
+    
+    
+    
         
             
     
