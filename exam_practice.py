@@ -107,6 +107,38 @@ elif option == "Exercise 4":
             st.dataframe(df)
             st.success("Data saved!")
 
+elif option == "Exercise 5":
+    with st.sidebar:
+        button = st.button("Generate Random Monthly Data")
+        if button:
+            month = ["Jan", "Feb", "Mar", "Apr", "Mar", "Jun", "Jul",
+                     "Aug", "Sep", "Oct", "Nov", "Dec"]
+            sales = np.random.randint(1000, 10000, 12)
+            df = pd.DataFrame("Month": month, "Sales": sales)
+
+    with open ("monthly_sales,csv", "w") as file:
+        writer = csv.DictWriter(file, fieldnames= ["Month", "Sales"])
+        writer.writeheader()
+        writer.writerows(df)
+
+    data = pd.read_csv("monthly_sales,csv")
+    st.dataframe(data)
+    threshold = st.slider("Adjust sales threshold", min_value = 1000, max_value = 10000, value = 5000)
+
+    above = [row for row in data if row["Sales"] >= threshold]
+    st.dataframe(above)
+
+
+
+    
+    st.line_chart(data[["Month", "Sales"]].set_index("Month"))
+    st.bar_chart(data[["Month", "Sales"]].set_index("Month"))
+    submit = st.button("Save Data")
+    if submit:
+        st.success("Data saved!")
+    
+    
+
     
 
     
