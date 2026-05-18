@@ -95,6 +95,19 @@ elif option == "Exercise 3":
     st.line_chart(df.set_index("Year"))
     st.metric("Total Revenue", f"${sum(Revenue)}M")
 
+elif option == "Exercise 4":
+    
+    with st.form(key = "customer"):
+        name = st.text_input("Customer Name")
+        age = st.number_input("Age", min_value= 0, max_value =100)
+        annual_spend = st.number_input("Annual Spend", min_value= 0, max_value =999999)
+        button = st.form_submit_button("Submit")
+        if button:
+            df = pd.DataFrame({"Name":name, "Age": age, "Annual Spend": annual_spend})
+            st.dataframe(df)
+            st.scatter_chart(df[["Age", "Annual Spend"]].set_index("Age"))
+            st.success("Data saved!")
+
     
 
     
