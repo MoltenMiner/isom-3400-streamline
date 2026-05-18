@@ -94,7 +94,7 @@ elif option == "Exercise 3":
 
     st.line_chart(df.set_index("Year"))
     revenue_data = list(df)
-    cum = revenue_data["Revenue"].sum()
+    cum = int(revenue_data["Revenue"]).sum()
     st.metric("Cumulative sum", f"${cum:,.2f}M")
     
 
