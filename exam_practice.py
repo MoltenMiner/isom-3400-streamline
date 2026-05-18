@@ -103,7 +103,7 @@ elif option == "Exercise 4":
         annual_spend = st.number_input("Annual Spend", min_value= 0, max_value =999999)
         button = st.form_submit_button("Submit")
         if button:
-            df = pd.DataFrame({"Name":name, "Age": age, "Annual Spend": annual_spend})
+            df = pd.DataFrame({"Name": [name], "Age": [age], "Annual Spend": [annual_spend]})
             st.dataframe(df)
             st.success("Data saved!")
 
