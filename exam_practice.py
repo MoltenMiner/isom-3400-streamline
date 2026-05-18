@@ -71,7 +71,8 @@ elif option == "Exercise 3":
     with open ("products.csv", "w") as file:
         file.write(products)
         
-    pd.DataFrame("products.csv")
+    data = pd.read_cssv("products.csv")
+    st.dataframe(data)
         
         
             
