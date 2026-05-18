@@ -75,7 +75,7 @@ elif option == "Exercise 3":
     data = pd.read_csv("products.csv")
     st.dataframe(data)
 
-    st.scatter_chart(data[["Units_Sold", "Revenue"]].set_index("Units_Sold"), x= "Units Sold", y="Revenue")
+    st.scatter_chart(data[["Units_Sold", "Revenue"]].set_index("Units_Sold"), x_label= "Units Sold", y_label="Revenue")
 
     st.title("Generated form random")
     
