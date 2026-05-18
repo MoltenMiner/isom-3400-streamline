@@ -144,6 +144,9 @@ elif option == "Bonus":
         df = pd.read_csv(file)
         st.dataframe(df)
 
+        columns = [i for i in df]
+        st.multiselect("Select data", columns)
+
     
 
 
