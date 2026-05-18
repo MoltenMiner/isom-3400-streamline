@@ -139,9 +139,9 @@ elif option == "Exercise 5":
             st.success("Data saved!")
 
 elif option == "Bonus":
-    file = st.file_uploader("Upload a csv file", label = "csv")
-    if file:
-        df = pd.read_csv(file)
+    abc = st.file_uploader("Upload a csv file", label = "csv")
+    if abc:
+        df = pd.read_csv(abc)
         st.dataframe(df)
 
     
