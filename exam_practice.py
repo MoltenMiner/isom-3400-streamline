@@ -81,13 +81,9 @@ elif option == "Exercise 3":
     st.bar_chart(filtered[["Category", "Units_Sold"]].set_index("Category"))
     
 
-
-
-
-    
     st.scatter_chart(data[["Units_Sold", "Revenue"]].set_index("Units_Sold"), x_label= "Units Sold", y_label="Revenue")
 
-    st.title("Generated form random")
+    st.title("Generated from random")
     
     Price = np.random.randint(100,1000, 10)
     Revenue = np.random.randint(10,90, 10)
@@ -97,8 +93,11 @@ elif option == "Exercise 3":
     st.dataframe(df)
 
     st.line_chart(df.set_index("Year"))
+    revenue_data = list(df)
+    cum = revenue_data["Revenue"].sum()
+    st.metric("Cumulative sum", f"${cum:,.2f}M")
+    
 
-elif option == "Exercise 4":
     
 
     
