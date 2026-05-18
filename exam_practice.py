@@ -114,7 +114,7 @@ elif option == "Exercise 5":
             month = ["Jan", "Feb", "Mar", "Apr", "Mar", "Jun", "Jul",
                      "Aug", "Sep", "Oct", "Nov", "Dec"]
             sales = np.random.randint(1000, 10000, 12)
-            df = pd.DataFrame({"Month": month, "Sales": sales})
+            df = {"Month": month, "Sales": sales}
 
     with open ("monthly_sales,csv", "w") as file:
         writer = csv.DictWriter(file, fieldnames= ["Month", "Sales"])
