@@ -69,9 +69,7 @@ elif option == "Exercise 3":
     Pro J,Home,430,40,17200'''
     
     with open ("products.csv", "w") as file:
-        writer = csv.DictWriter(file, fieldnames= ["Product", "Category", "Units_sold", "Price", "Revenue"])
-        writer.writeheader()
-        writer.writerows(products)
+        file.write(products)
         
     pd.DataFrame("products.csv")
         
