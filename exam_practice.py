@@ -93,7 +93,7 @@ elif option == "Exercise 3":
     st.dataframe(df)
 
     st.line_chart(df.set_index("Year"))
-    st.write(list(df))
+    st.metric("Total Revenue", f"${sum(Revenue)}M")
 
     
 
