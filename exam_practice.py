@@ -8,7 +8,8 @@ import csv
 
 with st.sidebar:
     option = option_menu(menu_title = "Menu",
-                         options = ["Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", "Exercise 5"],
+                         options = ["Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", 
+                                    "Exercise 5", "Bonus"],
                          default_index = 0)
     
 if option == "Exercise 1":
@@ -137,6 +138,13 @@ elif option == "Exercise 5":
         if submit:
             st.success("Data saved!")
 
+elif option == "Bonus":
+    file = st.file_uploader("Upload a csv file", label = "csv")
+    if file:
+        df = pd.read_csv(file)
+        st.dataframe(df)
+
+    
 
 
 
