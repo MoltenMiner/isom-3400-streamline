@@ -75,6 +75,16 @@ elif option == "Exercise 3":
     data = pd.read_csv("products.csv")
     st.dataframe(data)
 
+    category = st.multiselect("Choose one or more category", ["Electronics", "Clothing", "Home"])
+    filtered = data[data["Category"].isin(category)]
+    
+    st.bar_chart(filtered[["Category", "Units_Sold"]].set_index("Category"))
+    
+
+
+
+
+    
     st.scatter_chart(data[["Units_Sold", "Revenue"]].set_index("Units_Sold"), x_label= "Units Sold", y_label="Revenue")
 
     st.title("Generated form random")
@@ -87,6 +97,8 @@ elif option == "Exercise 3":
     st.dataframe(df)
 
     st.line_chart(df.set_index("Year"))
+
+elif option == "Exercise 4":
     
 
     
