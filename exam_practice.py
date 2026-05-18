@@ -146,12 +146,13 @@ elif option == "Bonus":
 
      
         columns = [i for i in df]
-        select = st.multiselect("Select data", columns)
+        select = st.multiselect("Select data", columns, max_selections = 2)
         filtered = df[df[select]]
-        st.line_chart(filtered)
-        st.bar_chart(filtered)
-        st.scatter_chart(filtered)
-            
+        if len(select) == 2:
+            st.line_chart(filtered)
+            st.bar_chart(filtered)
+            st.scatter_chart(filtered)
+                
 
     
 
