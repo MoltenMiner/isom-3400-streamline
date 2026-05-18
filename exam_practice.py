@@ -88,7 +88,7 @@ elif option == "Exercise 3":
 
     st.line_chart(df.set_index("Year"))
     
-elif option == "Exercise 4":
+
     
         
             
