@@ -189,7 +189,7 @@ elif option == "pre-exam2":
             if button:
                 filtered_data = df[(df[select] ==text) & (df["Sales"] >= value)]
                 st.success(f"Found {len(filtered_data)} rows")
-                data = st.dataframe(filtered_data)
+                data.dataframe(filtered_data)
             
         
 
