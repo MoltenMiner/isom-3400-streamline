@@ -232,7 +232,9 @@ elif option == "pre-exam4":
 
     
     with st.sidebar:
-        option = option_menu(menu_title = "Menu", options=["Line Chart", "Table", "Data Editor"], default_index =0)
+        option = option_menu(menu_title = "Menu", 
+                             options=["Line Chart", "Table", "Data Editor", "CSV Data Filtering"], 
+                             default_index =0)
         button = st.button ("Reset")
         if button:
             sales = np.random.randint(1000,5001, 6)
@@ -248,6 +250,41 @@ elif option == "pre-exam4":
         editor = st.data_editor(df, disabled=["Month", "Target"])
         st.write("### Updated DataFrame (after editing)")
         st.dataframe(editor)
+
+    elif option =="CSV Data Filtering":
+        file = st.file_uploader("Upload a CSV file", type = "csv")
+        if file:
+            df = pd.DataFrame(file)
+            with st.expander("Data Info"):
+                df.info()
+            with st.expander("Statistics"):
+                df.describe()
+
+            department = st.selectbox("Departments", df["Department"].unique())
+            salary = st.number_input("Minimum salary", min_value =0, max_value = 200000, value = 0)
+            performance = st.number_input("Minimum Performance Score", min_value =0, max_value = 1000, value = 0)
+            name = st.text_input("Name")
+            filter =st.button("Apply Filters")
+            if filter:
+                filtered = df[(df["Department"] == department) & (df["Salary"] >= salary) & 
+                (df["Performance_Score"] >= performance) & (df["Name"] == name)]
+                data1 = st.dataframe(filtered)
+                st.success(f"Showing {len(filtered)} rows")
+                
+            reset = st.button("Reset")
+            if reset:
+                data1.dataframe(df)
+            
+                
+                    
+
+
+
+                
+        else:
+            st.write("Please upload a CSV file")
+                
+                
 
     
         
