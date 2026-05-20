@@ -159,12 +159,12 @@ elif option == "pre-exam":
         df = pd.read_csv(file)
 
         st.header("Data overview")
-        data = st.dataframe(df,5)
+        data = st.dataframe(df)
         names = st.selectbox("Select column name", df.columns)
         number = st.number_input("Choose a number", min_value = 0, max_value = 100)
         button = st.button ("Filter")
         if button:
-            data = st.dataframe(df[df[names]>=number], 5)
+            data = st.dataframe(df[df[names]>=number])
             st.success(f"{len(data)} rows match the filter.")
             
     
