@@ -187,8 +187,8 @@ elif option == "pre-exam2":
                 value = st.number_input("Minimum threshold", min_value = 0, max_value = 100, value = 0)
                 button = st.form_submit_button("Apply Filters")
             if button:
-               
-                st.success(f"Found {len(df[df[text] and df[select] and df["Sales"]>value])} rows")
+                filtered_data = df[df[select] and df[text] and df["Sales"] >= value]
+                st.success(f"Found {len(filtered_data)} rows")
                 data = st.dataframe(df[df[text] and df[select] and df["Sales"]>value])
             
         
