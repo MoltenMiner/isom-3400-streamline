@@ -189,7 +189,7 @@ elif option == "pre-exam2":
             if button:
                
                 st.success(f"Found {len(df[df[text] and df[select] and df["Sales"]>value])} rows")
-                 data = st.dataframe(df[df[text] and df[select] and df["Sales"]>value])
+                data = st.dataframe(df[df[text] and df[select] and df["Sales"]>value])
             
         
 
