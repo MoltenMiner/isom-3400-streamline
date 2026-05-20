@@ -169,9 +169,17 @@ elif option == "pre-exam1":
 
 elif option == "pre-exam2":
     file = st.file_uploader("Upload a CSV file", type ="csv")
-    if file:
-        with st.expander("Data Overview"):
+    sample_output = {"Product": ["Widget A", "Widget A", "Widget B", "Widget C"],
+                     "Region": ["North", "South", "West", "East"],
+                     "Sales": [50,10,60,90],
+                     "Quantity": [80,100,90,99]}
+    
+    with st.expander("Data Overview"):
+        if file:
             df = pd.DataFrame(file)
+            data = st.dataframe(df)
+        else:
+            df = pd.DataFrame(sample_output)
             data = st.dataframe(df)
             with st.form(key = "form"):
                 select = st.selectbox("Select Product or Region", ["Product", "Region"])
@@ -183,11 +191,11 @@ elif option == "pre-exam2":
                 st.success(f"Found {len(df[df[text] and df[select] and df["Sales"]>value])} rows")
                  data = st.dataframe(df[df[text] and df[select] and df["Sales"]>value])
             
-            
-    
-                
+        
 
-    
+            
+
+
 
 
 
