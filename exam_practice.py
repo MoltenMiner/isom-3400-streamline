@@ -176,7 +176,7 @@ elif option == "pre-exam2":
     
     with st.expander("Data Overview"):
         if file:
-            df = pd.DataFrame(file)
+            df = pd.read_csv(file)
             data = st.dataframe(df)
         else:
             df = pd.DataFrame(sample_output)
@@ -187,9 +187,9 @@ elif option == "pre-exam2":
                 value = st.number_input("Minimum threshold", min_value = 0, max_value = 100, value = 0)
                 button = st.form_submit_button("Apply Filters")
             if button:
-                filtered_data = df[df[select] ==text and df["Sales"] >= value]
+                filtered_data = df[df[select] ==text & df["Sales"] >= value]
                 st.success(f"Found {len(filtered_data)} rows")
-                data = st.dataframe(df[df[text] and df[select] and df["Sales"]>value])
+                data = st.dataframe(filtered_data)
             
         
 
