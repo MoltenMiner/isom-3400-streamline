@@ -232,7 +232,7 @@ elif option == "pre-exam4":
 
     
     with st.sidebar:
-        option = st.option_menu(menu_title = "Menu", options=["Line Chart", "Table", "Data Editor"], default_index =0)
+        option = option_menu(menu_title = "Menu", options=["Line Chart", "Table", "Data Editor"], default_index =0)
         button = st.button ("Reset")
         if button:
             sales = np.random.randint(1000,5001, 6)
