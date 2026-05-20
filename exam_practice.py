@@ -9,7 +9,7 @@ import csv
 with st.sidebar:
     option = option_menu(menu_title = "Menu",
                          options = ["Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", 
-                                    "Exercise 5", "Bonus"],
+                                    "Exercise 5", "Bonus", "pre-exam"],
                          default_index = 0)
     
 if option == "Exercise 1":
@@ -152,6 +152,22 @@ elif option == "Bonus":
             st.line_chart(filtered)
             st.bar_chart(filtered)
             st.scatter_chart(filtered)
+
+elif option == "pre-exam":
+    file = st.file_uploader("Upload a CSV file", type="csv")
+    if file:
+        df = pd.read_csv(file)
+
+        st.header("Data overview")
+        data = st.dataframe(df,5)
+        names = st.selectbox("Select column name", df.columns)
+        number = st.number_input("Choose a number", min_value = 0, max_value = 100)
+        button = st.button ("Filter")
+        if button:
+            data = st.dataframe(df[df[names]>=number], 5)
+            st.success(f"{len(data)} rows match the filter.")
+            
+    
                 
 
     
