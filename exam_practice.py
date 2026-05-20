@@ -261,7 +261,7 @@ elif option == "pre-exam4":
 
         
         if file2:
-            df = pd.DataFrame(data)
+            df = pd.DataFrame(file2)
             with st.expander("Data Info"):
                 df.info()
             with st.expander("Statistics"):
