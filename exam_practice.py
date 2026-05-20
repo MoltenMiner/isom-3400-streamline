@@ -252,9 +252,16 @@ elif option == "pre-exam4":
         st.dataframe(editor)
 
     elif option =="CSV Data Filtering":
-        file = st.file_uploader("Upload a CSV file", type = "csv")
-        if file:
-            df = pd.DataFrame(file)
+        file1 = st.file_uploader("Upload a CSV file", type = "csv")
+        file2 = {"Name": ["Alice", "Bob", "Charlie", "Kelly", "David", "Frank"],
+                "Department": ["Sales", "IT", "Marketing", "IT", "Sales", "Marketing"],
+                "Salary": [50000, 60000, 55000, 62000, 52000, 58000],
+                "Years of Experience": [5, 7, 6, 8, 4, 6],
+                "Performance_Score": [4.5, 4.0, 4.2, 4.8, 4.1, 4.3]}
+
+        
+        if file2:
+            df = pd.DataFrame(data)
             with st.expander("Data Info"):
                 df.info()
             with st.expander("Statistics"):
