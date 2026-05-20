@@ -280,7 +280,7 @@ elif option == "pre-exam4":
                 
             reset = st.button("Reset")
             if reset:
-                data1.dataframe(df)
+                data1= st.dataframe(df)
             
                 
                     
