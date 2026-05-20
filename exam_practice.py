@@ -9,7 +9,8 @@ import csv
 with st.sidebar:
     option = option_menu(menu_title = "Menu",
                          options = ["Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", 
-                                    "Exercise 5", "Bonus", "pre-exam1", "pre-exam2", "pre-exam3"],
+                                    "Exercise 5", "Bonus", "pre-exam1", "pre-exam2", "pre-exam3",
+                                   "pre-exam4"],
                          default_index = 0)
     
 if option == "Exercise 1":
@@ -191,8 +192,65 @@ elif option == "pre-exam2":
                 st.success(f"Found {len(filtered_data)} rows")
                 data.dataframe(filtered_data)
             
-        
+elif option == "pre-exam3":
+    file = st.file_uploader("Upload a CSV file", type="csv")
+    if file:
+        df = pd.read_csv(file)
+        tab1, tab2 = st.tabs(["By Department", "Employee Lookup"])
+        with tab1:
+            department = st.selectbox("Choose a department", ["Sales", "CEO", "Marketing"])
+            filtered_data = df[(df["Department"]== department)]
+            st.dataframe(filtered_data)
+            col1, col2 = st.columns(2)
+            with col1:
+                avg = filtered_data["Salary"].mean()
+                st.write(f"Average salary: ${avg:,.2f}")
+            with col2:
+                avg_exp = filtered_data["Experience_Years"].mean()
+                st.write(f"Average Experience: {avg_exp:,.2f}")
+        with tab2:
+            name = st.text_input("Employee Name")
+            min_exp = st.number_input("Minimum experience", min_value = 0, max_value = 100, value =0)
+            button = st.button("Search")
+            if button:
+                filtered_data = df[(df["Name"] == name) & (df["Experience_Years"]>= min_exp)]
+                if len(filtered_data) == 0:
+                    st.write("No employees found.")
+                else:
+                    st.dataframe(filtered_data)           
+    
+    else:
+        st.write("Please upload a CSV file")
 
+
+elif option == "pre-exam4":
+    sales = np.random.randint(1000,5001, 6)
+    sales = {"Month": ["Jan", "Feb", "Mar", "Apr", "may", "Jun"],
+             "Sales": sales,
+             "Target": [3000, 3000, 3000, 3000, 3000, 3000]}
+    df = pd.DataFrame(sales)
+
+    
+    with st.sidebar:
+        option = st.option_menu(menu_title = "Menu", options=["Line Chart", "Table", "Data Editor"], default_index =0)
+        button = st.button ("Reset")
+        if button:
+            sales = np.random.randint(1000,5001, 6)
+            st.success("Data reset!")
+            
+    if option == "Line Chart":
+        st.line_chart(df.set_index("Month"), height = 400, use_container_width = True)
+
+    elif option == "Table":
+        st.table(df)
+        
+    elif option == "Data Editor":
+        editor = st.data_editor(df, disabled=["Month", "Target"])
+        st.write("### Updated DataFrame (after editing)")
+        st.dataframe(editor)
+
+    
+        
             
 
 
