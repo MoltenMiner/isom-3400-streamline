@@ -165,7 +165,7 @@ elif option == "pre-exam":
         button = st.button ("Filter")
         if button:
             data = st.dataframe(df[df[names]>=number])
-            st.success(f"{len(data)} rows match the filter.")
+            st.success(f"{len(df[df[names]>=number])} rows match the filter.")
             
     
                 
