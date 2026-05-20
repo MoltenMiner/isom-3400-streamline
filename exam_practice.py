@@ -263,9 +263,9 @@ elif option == "pre-exam4":
         if file2:
             df = pd.DataFrame(file2)
             with st.expander("Data Info"):
-                df.info()
+                st.write(df.info())
             with st.expander("Statistics"):
-                df.describe()
+                st.write(df.describe())
 
             department = st.selectbox("Departments", df["Department"].unique())
             salary = st.number_input("Minimum salary", min_value =0, max_value = 200000, value = 0)
