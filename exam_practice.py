@@ -184,7 +184,7 @@ elif option == "pre-exam2":
             with st.form(key = "form"):
                 select = st.selectbox("Select Product or Region", ["Product", "Region"])
                 text = st.text_input("Input something")
-                value = st.number_input("Minimum threshold", min_value = 0, max_value = 100, default = 0)
+                value = st.number_input("Minimum threshold", min_value = 0, max_value = 100, value = 0)
                 button = st.form_submit_button("Apply Filters")
             if button:
                
