@@ -9,7 +9,7 @@ import csv
 with st.sidebar:
     option = option_menu(menu_title = "Menu",
                          options = ["Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", 
-                                    "Exercise 5", "Bonus", "pre-exam"],
+                                    "Exercise 5", "Bonus", "pre-exam1", "pre-exam2", "pre-exam3"],
                          default_index = 0)
     
 if option == "Exercise 1":
@@ -153,7 +153,7 @@ elif option == "Bonus":
             st.bar_chart(filtered)
             st.scatter_chart(filtered)
 
-elif option == "pre-exam":
+elif option == "pre-exam1":
     file = st.file_uploader("Upload a CSV file", type="csv")
     if file:
         df = pd.read_csv(file)
@@ -166,6 +166,23 @@ elif option == "pre-exam":
         if button:
             data = st.dataframe(df[df[names]>=number])
             st.success(f"{len(df[df[names]>=number])} rows match the filter.")
+
+elif option == "pre-exam2":
+    file = st.file_uploader("Upload a CSV file", type ="csv")
+    if file:
+        with st.expander("Data Overview"):
+            df = pd.DataFrame(file)
+            data = st.dataframe(df)
+            with st.form(key = "form"):
+                select = st.selectbox("Select Product or Region", ["Product", "Region"])
+                text = st.text_input("Input something")
+                value = st.number_input("Minimum threshold", min_value = 0, max_value = 100, default = 0)
+                button = st.form_submit_button("Apply Filters")
+            if button:
+               
+                st.success(f"Found {len(df[df[text] and df[select] and df["Sales"]>value])} rows")
+                 data = st.dataframe(df[df[text] and df[select] and df["Sales"]>value])
+            
             
     
                 
